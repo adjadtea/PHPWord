@@ -72,6 +72,8 @@ class Html
         }
 
         // Load DOM
+        libxml_use_internal_errors(true);
+        //libxml_use_internal_errors — Disable libxml errors and allow user to fetch error information as needed
         $orignalLibEntityLoader = libxml_disable_entity_loader(true);
         $dom = new \DOMDocument();
         $dom->preserveWhiteSpace = $preserveWhiteSpace;
